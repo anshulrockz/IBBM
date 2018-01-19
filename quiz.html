@@ -1,0 +1,710 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Quick Quiz | MoneyMaker Institute of Financial Markets</title>
+</head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link href="assets/quiz/quiz.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<script src="assets/popper/popper.min.js"></script>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	.quiz-header{
+	width: 100%;
+	padding:5px 15px;
+	background: #fff;
+	z-index: 10;
+	box-sizing: border-box;
+}
+	.quiz-logo{
+		text-align: center;
+		width: 100%;
+	}
+	.quiz-logo a{
+		text-decoration: none;
+		font-family: lato;
+		font-weight: bold;
+		color: #0095e5;
+	}
+	
+	.quiz-box{
+		width: 100%;
+		padding: 20px 0;
+		float: left;
+		text-align: center;
+		font-family: lato;
+	}
+	.quiz-result{
+		width: 100%;
+		padding: 20px 0;
+		float: left;
+		text-align: center;
+		font-family: lato;
+	}
+.quiz-box a {
+	text-decoration: none;
+	margin: auto;
+	background: #0095e5;
+	color: #fff;
+	font-size: 22px;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+	.quiz-button{
+	display:inline-block;
+	text-decoration: none;
+	padding: 8px 18px;
+	border-radius: 8px;
+	font-size: 24px;
+	background:#0095e5;
+	font-weight: bold;
+	transition: all ease .6s;
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+.quiz-button:hover{
+	color: #0095e5;
+	box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
+}
+	.h3-format{
+		font-size: 17px;
+	}
+	/*********************Quiz BG CSS ************************/
+
+.quiz-bg{
+	background-image: url(img/quiz.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	/*float: left;*/
+	height: 350px;
+}
+
+/*.quiz-bg:before {
+    content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background:#000000;
+	opacity: .4; 
+  }*/
+
+
+.name-quiz {
+	min-height: 350px;
+	width:100%;
+	position: relative;
+}
+
+.name-quiz h3{
+	text-align: center;
+	position: absolute;
+	bottom: 30%;
+	width: 100%;
+	color: #f3f3f3;
+	font-family: lato;
+	font-weight: bold;
+	font-size: -webkit-xxx-large;
+	text-shadow:0px 0px 5px #000;
+}
+
+</style>
+
+<body>
+<main>
+
+	<section>
+		<div class="quiz-header">
+			<div class="quiz-logo">
+			<a href="index.html">
+            	<img src="img/tree.gif" alt="" style="height: 3.2rem;">
+            </a><br>
+            <a href="index.html">MoneyMaker Institute of Financial Market</a>
+		</div>
+			
+		</div>
+	</section>
+	
+	<section>
+		<div class="quiz-bg" atl="Quiz.jpg" title="Quiz">
+			<div class="name-quiz">
+				<!--<h3>Quick Quiz</h3>-->
+			</div>
+		</div>
+	</section>
+	
+	<section>
+	<div class="quiz-box">
+		<button class="btn btn-primary quiz-button" id="start">Take Quiz</button>
+	</div>
+	<div class="quiz-result">
+		<div id="result"></div>
+		<h3>Thanks To Take Quiz</h3>
+	</div>
+	</section>
+	
+	<section>
+<div class=" quiz-modal">
+	<form id="quiz-form" class="form-group ">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning " id="qid">1.</span>Stock Market is a place where:</h3>
+				</div>
+				<div class="modal-body ">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_1" value="a" id="defaultCheck1">
+						Stock Buyers and Sellers meet
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_1" value="b" id="defaultCheck2">
+						Investors and Companies meet
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_1" value="c" id="defaultCheck2">
+						Traders and Investors meet
+					</label>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">2</span> The Indian Stock Market is regulated by:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_2" value="a" id="defaultCheck1">
+						Reserve Bank of India (RBI)
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_2" value="b" id="defaultCheck2">
+						Government of India (GOI)
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_2" value="c" id="defaultCheck2">
+						Securities and Exchange Board of India (SEBI)
+					</label>
+			   </div>
+			</div>
+		</div>
+		
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">3</span> Stock Trading is involves::</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_3" value="a" id="defaultCheck1">
+						Capital Risk
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_3" value="b" id="defaultCheck2">
+						Guaranteed Return
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_3" value="c" id="defaultCheck2">
+						Limited Risk
+					</label>
+			   </div>
+			</div>
+		</div>
+		
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">4</span> The Largest Stock Market in India is:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_4" value="a" id="defaultCheck1">
+						Delhi Stock Exchange (DSE)
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_4" value="b" id="defaultCheck2">
+						Bombay Stock Exchange (BSE)
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_4" value="c" id="defaultCheck2">
+						National Stock Exchange (NSE)
+					</label>
+			   </div>
+			</div>
+		</div>
+		
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">5</span> The Oldest Stock Market in India is:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_5" value="a" id="defaultCheck1">
+						Delhi Stock Exchange (DSE)
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_5" value="b" id="defaultCheck2">
+						Bombay Stock Exchange (BSE)
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_5" value="c" id="defaultCheck2">
+						National Stock Exchange (NSE)
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">6</span> Share holders are the:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_6" value="a" id="defaultCheck1">
+						Employees of the company
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_6" value="b" id="defaultCheck2">
+						Owners of the company
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_6" value="c" id="defaultCheck2">
+						None of Above
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">7</span> Stock Market participants include:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_7" value="a" id="defaultCheck1">
+						Individual Investors/ Traders
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_7" value="b" id="defaultCheck2">
+						Mutual Funds and Insurance companies
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_7" value="c" id="defaultCheck2">
+						Hedge Funds and Arbitrage Funds
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_7" value="d" id="defaultCheck2">
+						Foreign Institutional Investor
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_7" value="d" id="defaultCheck2">
+						All of the Above
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">8</span> Share of profit, if distributed by management in cash is called as:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_8" value="a" id="defaultCheck1">
+						Bonus
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_8" value="b" id="defaultCheck2">
+						Rights
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_8" value="c" id="defaultCheck2">
+						Dividend
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">9</span> Dividends received from limited companies are:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_9" value="a" id="defaultCheck1">
+						Taxable
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_9" value="b" id="defaultCheck2">
+						Non-Taxable
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">10</span> The Share Price is decided by:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_2" value="a" id="defaultCheck1">
+						Stock Exchange Management
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_10" value="b" id="defaultCheck2">
+						Companies
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_10" value="c" id="defaultCheck2">
+						Buyers and Sellers of the particular stocks
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_10" value="d" id="defaultCheck2">
+						Government
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">11</span> The term Bullish Indicates:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_11" value="a" id="defaultCheck1">
+						Positive Price Action
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_11" value="b" id="defaultCheck2">
+						Negative Price Action
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_11" value="c" id="defaultCheck2">
+						Neutral Price Action
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">12</span> Who is the member of a Stock Exchange?:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_12" value="a" id="defaultCheck1">
+						Stock Broker
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_12" value="b" id="defaultCheck2">
+						Banker
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_12" value="c" id="defaultCheck2">
+						Traders
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_12" value="c" id="defaultCheck2">
+						Government
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">13</span> The Shares bought are held in:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_13" value="a" id="defaultCheck1">
+						Depositories
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_13" value="b" id="defaultCheck2">
+						Banker
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_13" value="c" id="defaultCheck2">
+						Broker
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_13" value="d" id="defaultCheck2">
+						Stock Exchanges
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">14</span> The Indian Stock Market is regulated by:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_14" value="a" id="defaultCheck1">
+						Sensitive Index of Bombay Stock Exchange
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_14" value="b" id="defaultCheck2">
+						Sensitive Index of National Stock Exchange
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_14" value="c" id="defaultCheck2">
+						Indian Sectorial Index
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_14" value="d" id="defaultCheck2">
+						Government
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format" ><span class="label label-warning" id="qid">15</span> NIFTY carries:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_15" value="a" id="defaultCheck1">
+						Top 50 companies from India
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_15" value="b" id="defaultCheck2">
+						Top 50 companies Listed on NSE
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_15" value="c" id="defaultCheck2">
+						Top 30 Companies from BSE
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">16</span> Indian Stock Markets Movements are influenced by:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_16" value="a" id="defaultCheck1">
+						Global Factors
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_16" value="b" id="defaultCheck2">
+						Domestic Factors
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_16" value="c" id="defaultCheck2">
+						All of the above		
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">17</span> The process of issuing share to the public is called as:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_17" value="a" id="defaultCheck1">
+						Right Issue
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_17" value="b" id="defaultCheck2">
+						Bonus Issue
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_17" value="c" id="defaultCheck2">
+						Initial Public offer
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">18</span> Stock Exchanges are::</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_18" value="a" id="defaultCheck1">
+						Primary Markets
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_18" value="b" id="defaultCheck2">
+						Secondary Markets
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_18" value="c" id="defaultCheck2">
+						Both
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">19</span> The Best practice while investing is:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_19" value="a" id="defaultCheck1">
+						Buying the stocks which are cheap or low priced
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_19" value="b" id="defaultCheck2">
+						Buying stocks from various sectors to diversify the risk
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_19" value="c" id="defaultCheck2">
+						Investing all capital at once
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">20</span> The Investments in Equities for long term perspective:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_20" value="a" id="defaultCheck1">
+						Can offer highest returns over other assets classes
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_20" value="b" id="defaultCheck2">
+						Has a the lowest potential of return over other assets classes
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">21</span> Online stock trading enables traders:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_21" value="a" id="defaultCheck1">
+						To buy and sell stocks through internet using the platform provided by Stock Broker.
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_21" value="b" id="defaultCheck2">
+						To place orders over phone.
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_21" value="c" id="defaultCheck2">
+						To visit broker office to place orders.
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<h3 class="h3-format"><span class="label label-warning" id="qid">22</span> The Stock Market trading time in India (NSE and BSE) is:</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_22" value="a" id="defaultCheck1">
+						9:00AM to 3:30PM
+					</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_22" value="b" id="defaultCheck2">
+						10:00AM to 11:30PM
+						</label>
+					<label class="element-animation3 col-md-12">
+						<input  type="radio" name="que_22" value="c" id="defaultCheck2">
+						9:00AM to 5:00 PM
+					</label>
+			   </div>
+			</div>
+		</div>
+		<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+					<h3 class="h3-format">Fill<span class="label label-warning" id="qid">Your Details</span>For Result</h3>
+				</div>
+				<div class="modal-body">
+					<label class="element-animation3 col-md-12" >Name:
+						<input  type="text" name="name" id="defaultCheck1" required="" style="margin-left:15px">
+					</label>
+					<label class="element-animation3 col-md-12" >Email:
+						<input  type="text" name="email" id="defaultCheck2" required="" style="margin-left:20px">
+					</label>
+					<label class="element-animation3 col-md-12" >Mobile:
+						<input  type="number" name="mobile"  id="defaultCheck2" required="" style="margin-left:8px">
+					</label>
+			   </div>
+			   <div class="modal-footer">
+					<input type="submit" value="Result" class="btn btn-success" >
+				</div>
+			</div>
+			
+		</div>
+		
+	</form><br>
+</div></section>
+</main>
+
+<script>
+$(document).ready(function() {
+	$(".quiz-modal").hide(); //Hide Modal
+	$(".quiz-result").hide(); //Hide Modal
+	$("#start").click(function() {	//show Test questions
+		$(".quiz-box").hide();
+		$(".quiz-modal").show();
+	});
+	
+	$('#quiz-form').submit(function(){
+		$("input[type=submit]").attr({disabled:'disabled',value:'Please Wait...'});
+		
+		$.ajax({
+			type: 'POST',
+			url: 'backend/quiz.php',
+			data: $(this).serialize()
+		})
+		.done(function(data){
+			$('#quiz-form')[0].reset();
+			$(".quiz-modal").hide();
+			$(".quiz-result").show();
+			$("#result").html(data);
+			$("input[type=submit]").attr({value:'Submit'});
+			$("input[type=submit]").removeAttr("disabled");
+		})
+		.fail(function() { 
+			alert( "Please fill your details." );
+			$("input[type=submit]").attr({value:'Submit'});
+			$("input[type=submit]").removeAttr("disabled");
+		});
+
+		// to prevent refreshing the whole page page
+		return false;
+
+	});
+});
+</script>
+</script>
+
+</body>
+</html>
